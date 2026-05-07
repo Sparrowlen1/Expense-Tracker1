@@ -29,7 +29,7 @@ function App() {
     <div className='max-w-7xl mx-auto'>
       <header className='text-center mb-8'>
         <h1 className='text-4xl font-bold text-white mb-2'>SparrowExpense Tracker</h1>
-          <p className='text-purple-100'>Lets Manage your daily Expense with Sparrowlen</p>
+          <p className='text-purple-100'>Lets Manage your daily Expense with Sparrowlen Tracker</p>
       </header>
       <ExForm onAddExpense={addExpense} /> 
       <Search searchTerm={searchTerm} onSearchChange={setSearchTerm} />
