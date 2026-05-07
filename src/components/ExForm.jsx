@@ -27,7 +27,7 @@ function ExForm({ onAddExpense }) {
   }
 };
 
-const validationForm = ()=>{
+const validateForm = ()=>{
     const newErrors={};
 
     if(!formData.name.trim()) newErrors.name="howdy Sparrow expense name is required";
@@ -39,15 +39,15 @@ const validationForm = ()=>{
         newErrors.amount="hehe seems you have no money since its negative amount"
     }
     if(!formData.date)
-        newErrors.date="we need date fellow"
+        newErrors.date="we need date fellow Sparrow"
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0; //gets an array of all keys with errors
 };
 
 const handleSubmit = (e)=>{
     e.preventDefault();
-    if(validationForm()){
-        onAddExpense(FormData);
+    if(validateForm()){
+        onAddExpense(formData);
         setFormData({
             name:'',
             description:'',
@@ -65,7 +65,7 @@ const handleSubmit = (e)=>{
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-2">
-              Expense Name <span className="text-red-500">*</span>
+              Expense Name <span className="text-red-500"></span>
             </label>
             <input
               type="text"
@@ -75,12 +75,12 @@ const handleSubmit = (e)=>{
               placeholder="movie,groceries my fellow sparrow"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
             />
-            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+            {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
           </div>
 
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-2">
-              Category <span className="text-red-500">*</span>
+              Category <span className="text-red-500"></span>
             </label>
             <select
               name="category"
@@ -99,7 +99,7 @@ const handleSubmit = (e)=>{
 
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-2">
-              Amount in kenyaSH <span className="text-red-500">*</span>
+              Amount in kenyaSH <span className="text-red-500"></span>
             </label>
             <input
               type="number"
@@ -115,7 +115,7 @@ const handleSubmit = (e)=>{
 
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-2">
-              Date <span className="text-red-500">*</span>
+              Date <span className="text-red-500"></span>
             </label>
             <input
               type="date"
@@ -134,7 +134,7 @@ const handleSubmit = (e)=>{
             name="description"
             value={formData.description}
             onChange={handleChange}
-            placeholder="Optional: Add more details..."
+            placeholder="hey Sparrow kindly provide a description "
             rows="3"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none resize-none"
           />

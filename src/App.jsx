@@ -15,7 +15,7 @@ function App() {
   }
 
   const deleteExpense=(id)=>{
-    if(window.confirm('howdy do you want to delete this expense')){
+    if(window.confirm('howdy sparrow do you want to delete this expense')){
       setExpenses(expenses.filter(expense =>expense.id !==id)) //callback function
     }
   }
@@ -31,7 +31,7 @@ function App() {
         <h1 className='text-4xl font-bold text-white mb-2'>SparrowExpense Tracker</h1>
           <p className='text-purple-100'>Lets Manage your daily Expense with Sparrowlen</p>
       </header>
-      <ExForm onAddExpense={addExpense} /> //passes prop for the addExpense function
+      <ExForm onAddExpense={addExpense} /> 
       <Search searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       <ExTable expenses={filteredExpense} onDeleteExpense={deleteExpense} />
     </div>
